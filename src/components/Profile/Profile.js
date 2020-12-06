@@ -1,30 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import s from './Profile.module.css';
 
-const Profile = ({name, tag, avatar, location, stats}) => (<div class="profile">
-  <div className="description">
+
+const Profile = ({name, tag, avatar, location, stats}) => (<div className={s.profile}>
+  
     <img
       src={avatar}
       alt="Аватар пользователя"
-      class="avatar"
+      className={s.avatar}
     />
-    <p className="name">{name}</p>
-    <p className="tag">{tag}</p>
-    <p className="location">{location}</p>
+    <div className={s.description}>
+    <p className={s.name}>{name}</p>
+    <p >{tag}</p>
+    <p >{location}</p>
   </div>
 
-  <ul className="stats">
-    <li>
-      <span className="label">Followers</span>
-      <span className="quantity">{stats.followers}</span>
+  <ul className={s.stats}>
+    <li className={s.item}>
+      <span>Followers</span>
+      <span>{stats.followers}</span>
     </li>
-    <li>
-      <span className="label">Views</span>
-      <span className="quantity">{stats.views}</span>
+    <li className={s.item}>
+      <span>Views</span>
+      <span>{stats.views}</span>
     </li>
-    <li>
-      <span className="label">Likes</span>
-      <span className="quantity">{stats.likes}</span>
+    <li className={s.item}>
+      <span>Likes</span>
+      <span>{stats.likes}</span>
     </li>
   </ul>
 </div>)
